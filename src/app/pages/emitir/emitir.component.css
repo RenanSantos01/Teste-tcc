@@ -1,0 +1,74 @@
+/* Container principal */
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Título */
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1a73e8;
+    font-weight: 600;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Inputs */
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: 0.2s;
+  }
+  
+  input:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 4px rgba(26, 115, 232, 0.4);
+  }
+  
+  /* Botão */
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #1a73e8;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  button:hover {
+    background-color: #155fc2;
+  }
+  
+  /* Mensagem de sucesso */
+  .success {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4f7d4;
+    color: #2d7a2d;
+    border-left: 5px solid #36c236;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+  }
+  

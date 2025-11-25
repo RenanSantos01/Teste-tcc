@@ -1,0 +1,32 @@
+<div class="home-container">
+
+    <h1 class="home-title">Bem-vindo ao Portal de Certificados Blockchain</h1>
+  
+    <!-- 🔹 Carrossel direto na Home -->
+    <div class="carousel-container">
+      <div class="carousel-track" [style.transform]="carouselTransform">
+        <div class="carousel-item" *ngFor="let item of carouselItems">
+          <img [src]="item.image" [alt]="item.title">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+  
+      <!-- Botões -->
+      <button class="btn prev" (click)="prev()">&#10094;</button>
+      <button class="btn next" (click)="next()">&#10095;</button>
+    </div>
+  
+    <!-- Ações -->
+    <div class="home-actions">
+      <button class="btn-action" routerLink="/emitir">
+        Emitir Certificado
+      </button>
+  
+      <button class="btn-action" routerLink="/validar">
+        Validar Certificado
+      </button>
+    </div>
+  
+  </div>
+  

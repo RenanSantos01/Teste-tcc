@@ -1,0 +1,33 @@
+.container {
+    max-width: 450px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .sucesso {
+    margin-top: 15px;
+    padding: 10px;
+    background: #daf5d6;
+    border-left: 4px solid #2e8b57;
+  }
+  
+  .erro {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8d7da;
+    border-left: 4px solid #b31d28;
+  }
+  
