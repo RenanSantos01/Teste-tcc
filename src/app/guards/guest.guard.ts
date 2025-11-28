@@ -4,14 +4,14 @@ import { CanActivate, Router, UrlTree } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class GuestGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean | UrlTree {
     const token = localStorage.getItem('token');
-    if (token) return true;
+    if (!token) return true; // não logado → pode entrar no login/register
 
-    // não logado → manda para /login
-    return this.router.parseUrl('/login');
+    // já logado → redireciona para home
+    return this.router.parseUrl('/');
   }
 }

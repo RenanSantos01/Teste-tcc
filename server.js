@@ -15,7 +15,7 @@ const SECRET = "minha_chave_super_secreta";
 const db = mysql.createConnection({
   host: "localhost", // depois trocamos para nuvem
   user: "root",
-  password: "cimatec",
+  password: "1234",
   database: "certificados",
 });
 

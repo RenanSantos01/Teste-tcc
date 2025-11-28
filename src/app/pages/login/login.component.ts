@@ -2,39 +2,51 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [FormsModule, CommonModule, RouterModule] // ✔ Agora o routerLink funciona
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class LoginComponent {
+
   email = '';
   password = '';
   error = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   login() {
     this.error = '';
 
-    // Simulação temporária
+    // Validação simples
     if (!this.email || !this.password) {
       this.error = 'Preencha todos os campos.';
       return;
     }
 
-    if (this.email !== 'admin@email.com' || this.password !== '123') {
-      this.error = 'Credenciais inválidas.';
-      return;
-    }
+    // Envia para API
+    this.authService.login(this.email, this.password).subscribe({
+      next: (res: any) => {
+        console.log("LOGIN OK", res);
 
-    // Se deu certo ✔
-    localStorage.setItem('token', 'fake-jwt');
+        // Salva o token
+        this.authService.saveToken(res.token);
 
-    // Redirecionar para o dashboard
-    this.router.navigate(['/dashboard']);
+        // Redireciona corretamente para a Home
+        this.router.navigate(['/']);
+      },
+
+      error: (err) => {
+        console.error(err);
+        this.error = err.error?.error || 'Credenciais inválidas.';
+      }
+    });
   }
 }

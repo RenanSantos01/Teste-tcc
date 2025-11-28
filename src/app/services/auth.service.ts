@@ -43,7 +43,7 @@ export class AuthService {
   // -------------------------------
   // PEGAR TOKEN
   // -------------------------------
-  getToken() {
+  getToken(): string | null {
     return localStorage.getItem('token');
   }
 
@@ -51,7 +51,7 @@ export class AuthService {
   // VERIFICAR LOGIN
   // -------------------------------
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+    return this.getToken() !== null;
   }
 
   // -------------------------------
@@ -63,14 +63,16 @@ export class AuthService {
   }
 
   // -------------------------------
-  // REQUISIÇÕES PROTEGIDAS
+  // HEADERS PARA ROTAS PROTEGIDAS
   // -------------------------------
   getAuthHeaders() {
     const token = this.getToken();
 
     return {
       headers: new HttpHeaders({
-        Authorization: token ? token : ''
+        // EXEMPLO CORRETO:
+        // Authorization: Bearer SEU_TOKEN
+        Authorization: token ? 'Bearer ' + token : ''
       })
     };
   }
