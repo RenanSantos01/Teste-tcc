@@ -15,7 +15,7 @@ const SECRET = "minha_chave_super_secreta";
 const db = mysql.createConnection({
   host: "localhost", // depois trocamos para nuvem
   user: "root",
-  password: "1234",
+  password: "cimatec",
   database: "certificados",
 });
 
@@ -102,6 +102,6 @@ app.get("/user-info", verifyToken, (req, res) => {
 /* -----------------------------------------------
    INICIAR SERVIDOR
 ------------------------------------------------*/
-app.listen(3000, () => {
-  console.log("API rodando na porta 3000!");
+app.listen(3001, () => {
+  console.log("API rodando na porta 3001!");
 });

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:3000'; // URL da sua API Node.js
+  private apiUrl = 'http://localhost:3001'; // URL da sua API Node.js
 
   constructor(private http: HttpClient, private router: Router) {}
 
