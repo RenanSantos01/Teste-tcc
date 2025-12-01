@@ -1,21 +1,46 @@
 <div class="login-container">
-    <h2>Entrar</h2>
-  
+
+  <div class="login-card">
+
+    <h2 class="login-title">Acessar Plataforma</h2>
+
     <form (ngSubmit)="login()">
-  
-      <label>Email</label>
-      <input type="email" [(ngModel)]="email" name="email" required>
-  
-      <label>Senha</label>
-      <input type="password" [(ngModel)]="password" name="password" required>
-  
-      <button type="submit" class="btn-primary">Entrar</button>
-    </form>
-  
-    <p *ngIf="error" class="error">{{ error }}</p>
-  
-    <button class="btn-secondary" routerLink="/register" type="button">
-        Criar uma conta
+
+      <div class="input-group">
+        <label>Email</label>
+        <input 
+          type="email" 
+          [(ngModel)]="email" 
+          name="email" 
+          required
+        >
+      </div>
+
+      <div class="input-group">
+        <label>Senha</label>
+        <input 
+          type="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn-login">
+        Entrar
       </button>
+
+    </form>
+
+    <!-- Erro -->
+    <p *ngIf="error" class="error">{{ error }}</p>
+
+    <!-- Link para cadastro -->
+    <p class="register-text">
+      Não tem conta?
+      <a routerLink="/register">Cadastre-se</a>
+    </p>
+
   </div>
-  
+
+</div>

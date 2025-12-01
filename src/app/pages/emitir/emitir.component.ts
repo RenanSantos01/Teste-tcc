@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import jsPDF from 'jspdf';
+import { Router } from '@angular/router';
 import { BlockchainService, Block } from '../../services/blockchain-simulada.service';
 
 @Component({
@@ -20,12 +21,32 @@ export class EmitirComponent {
   certificadoGerado = false;
   blocoGerado?: Block;
 
-  constructor(private blockchainService: BlockchainService) {}
+  erro: string = ''; // ⚠️ mensagem de erro
 
+  constructor(
+    private blockchainService: BlockchainService,
+    private router: Router
+  ) {}
+
+  // 🔙 VOLTAR PARA HOME
+  voltarHome() {
+    this.router.navigate(['/home']);
+  }
+
+  // 📄 EMITIR CERTIFICADO
   emitirCertificado() {
+
+    // 🔍 1. VALIDAR CAMPOS OBRIGATÓRIOS
+    if (!this.aluno || !this.curso || !this.data) {
+      this.erro = "Por favor, preencha todos os campos antes de emitir o certificado.";
+      return;
+    }
+
+    // 👍 Se chegou até aqui, limpa erros
+    this.erro = '';
     this.certificadoGerado = true;
 
-    // 🔗 Registrar no blockchain simulado
+    // 🔗 2. Registrar no blockchain simulado
     const dadosCertificado = {
       studentName: this.aluno,
       courseName: this.curso,
@@ -34,17 +55,15 @@ export class EmitirComponent {
 
     this.blocoGerado = this.blockchainService.addCertificate(dadosCertificado);
 
-    console.log("Bloco registrado na blockchain simulada:", this.blocoGerado);
+    console.log("Bloco registrado:", this.blocoGerado);
 
-    // 📄 Criar PDF
+    // 📄 3. Criar PDF
     const doc = new jsPDF();
 
-    // Título
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(22);
     doc.text('CERTIFICADO DE CONCLUSÃO', 105, 30, { align: 'center' });
 
-    // Corpo do certificado
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(14);
     doc.text(`Certificamos que ${this.aluno} concluiu com êxito o curso:`, 20, 60);
@@ -57,12 +76,10 @@ export class EmitirComponent {
     doc.setFontSize(14);
     doc.text(`Data de conclusão: ${this.data}`, 20, 95);
 
-    // Hash do bloco — assinatura digital
     doc.setFont('helvetica', 'italic');
     doc.setFontSize(12);
     doc.text(`Assinatura blockchain: ${this.blocoGerado?.hash}`, 20, 120);
 
-    // Salvar PDF
     doc.save(`certificado-${this.aluno}.pdf`);
   }
 }

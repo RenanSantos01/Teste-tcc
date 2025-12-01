@@ -1,15 +1,23 @@
-<div class="container">
-    <h2>Verificar Certificado</h2>
-  
-    <label>Insira o hash do certificado:</label>
-    <input type="text" [(ngModel)]="hash" placeholder="Cole aqui o hash" />
-  
-    <button (click)="verificar()">Verificar</button>
-  
-    <div *ngIf="valido !== null" 
-         [class.sucesso]="valido"
-         [class.erro]="!valido">
+<div class="verify-container">
+
+  <!-- BOTÃO VOLTAR -->
+  <button class="btn-back" (click)="voltarHome()">← Voltar</button>
+
+  <div class="verify-card">
+
+    <h2 class="verify-title">Verificar Certificado</h2>
+
+    <div class="input-group">
+      <label>Insira o hash do certificado:</label>
+      <input type="text" [(ngModel)]="hash" placeholder="Cole aqui o hash">
+    </div>
+
+    <button class="btn-verify" (click)="verificar()">Verificar</button>
+
+    <div *ngIf="valido !== null" [ngClass]="valido ? 'msg-success' : 'msg-error'">
       {{ resultado }}
     </div>
+
   </div>
-  
+
+</div>

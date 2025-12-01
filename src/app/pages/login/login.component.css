@@ -1,57 +1,99 @@
+/* Centralizar tudo na tela */
 .login-container {
-    max-width: 350px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #0002;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  .error {
-    color: red;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  a {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-  }
-  
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1b0033, #0a0014);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Card futurista */
+.login-card {
+  width: 380px;
+  padding: 40px 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 25px rgba(123, 31, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+/* Título */
+.login-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  opacity: 0.85;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #7a11ff;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #c08bff;
+  box-shadow: 0 0 8px #7a11ff;
+}
+
+/* Botão degradê */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #a234ff, #7a11ff);
+  box-shadow: 0 0 15px rgba(122, 17, 255, 0.7);
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 22px rgba(122, 17, 255, 0.9);
+}
+
+/* Link cadastro */
+.register-text {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.register-text a {
+  color: #c78aff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}

@@ -1,34 +1,54 @@
 <div class="home-container">
 
-  <!-- 🔹 Botão de Logout no topo direito -->
-  <button class="logout-btn" (click)="logout()">Sair</button>
+  <!-- NAVBAR FUTURISTA -->
+  <nav class="navbar">
+    <div class="logo">Certify<span>Flow</span></div>
 
-  <h1 class="home-title">Bem-vindo ao Portal de Certificados Blockchain</h1>
+    <div class="nav-actions">
+      <button class="logout-btn" (click)="logout()">Sair</button>
+    </div>
+  </nav>
 
-  <!-- 🔹 Carrossel direto na Home -->
-  <div class="carousel-container">
-    <div class="carousel-track" [style.transform]="carouselTransform">
-      <div class="carousel-item" *ngFor="let item of carouselItems">
-        <img [src]="item.image" [alt]="item.title">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </div>
+  <!-- HERO -->
+  <section class="hero-section">
+    
+    <div class="glass-badge">
+      🔗 Certificados digitais e autenticação blockchain
     </div>
 
-    <!-- Botões -->
+    <h1 class="hero-title">
+      Tecnologia moderna<br />para instituições modernas
+    </h1>
+
+    <p class="hero-subtitle">
+      Plataforma segura para emissão e validação de certificados acadêmicos,
+      com autenticação descentralizada e criptografada.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn-primary" routerLink="/emitir">
+        Emitir certificado
+      </button>
+
+      <button class="btn-primary" routerLink="/validar">
+        Validar certificado
+      </button>
+    </div>
+  </section>
+
+  <!-- CARROSSEL DE IMAGENS -->
+  <div class="carousel-container">
+    <div class="carousel-track" [style.transform]="carouselTransform">
+      
+      <div class="carousel-item" *ngFor="let item of carouselItems">
+        <img [src]="item.image" alt="slide">
+      </div>
+
+    </div>
+
+    <!-- Botões manual -->
     <button class="btn prev" (click)="prev()">&#10094;</button>
     <button class="btn next" (click)="next()">&#10095;</button>
-  </div>
-
-  <!-- Ações -->
-  <div class="home-actions">
-    <button class="btn-action" routerLink="/emitir">
-      Emitir Certificado
-    </button>
-
-    <button class="btn-action" routerLink="/validar">
-      Validar Certificado
-    </button>
   </div>
 
 </div>

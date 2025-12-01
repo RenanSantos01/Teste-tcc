@@ -1,45 +1,62 @@
-<div class="container">
+<div class="emitir-container">
+
+  <!-- Botão voltar -->
+  <button class="btn-back" (click)="voltarHome()">← Voltar</button>
+
+  <!-- Card principal -->
+  <div class="certificate-card">
 
     <h2>Emitir Certificado</h2>
-  
-    <!-- Formulário -->
-    <form (ngSubmit)="emitirCertificado()">
-  
-      <label>Nome do aluno:</label>
-      <input type="text" [(ngModel)]="aluno" name="aluno" required>
-  
-      <label>Nome do curso:</label>
-      <input type="text" [(ngModel)]="curso" name="curso" required>
-  
-      <label>Data de conclusão:</label>
-      <input type="date" [(ngModel)]="data" name="data" required>
-  
-      <button type="submit">Gerar Certificado</button>
+
+    <!-- Mensagem de erro -->
+    <p *ngIf="erro" class="erro">{{ erro }}</p>
+
+    <form (ngSubmit)="emitirCertificado()" #formCert="ngForm">
+
+      <div class="input-group">
+        <label>Nome do aluno:</label>
+        <input type="text" [(ngModel)]="aluno" name="aluno" required>
+      </div>
+
+      <div class="input-group">
+        <label>Nome do curso:</label>
+        <input type="text" [(ngModel)]="curso" name="curso" required>
+      </div>
+
+      <div class="input-group">
+        <label>Data de conclusão:</label>
+        <input type="date" [(ngModel)]="data" name="data" required>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        Emitir Certificado
+      </button>
+
     </form>
-  
+
     <!-- Mensagem de sucesso -->
     <div *ngIf="certificadoGerado" class="success">
       Certificado gerado com sucesso! ✔  
       Registro gravado na blockchain simulada.
     </div>
-  
+
     <!-- Dados do bloco gerado -->
     <div *ngIf="blocoGerado" class="block-info">
-  
       <h3>Registro Blockchain</h3>
-  
+
       <p><strong>Index:</strong> {{ blocoGerado.index }}</p>
       <p><strong>Timestamp:</strong> {{ blocoGerado.timestamp }}</p>
-  
+
       <p><strong>Hash:</strong> {{ blocoGerado.hash }}</p>
       <p><strong>Hash Anterior:</strong> {{ blocoGerado.previousHash }}</p>
-  
+
       <h4>Dados do Certificado</h4>
+
       <p><strong>Aluno:</strong> {{ blocoGerado.data.studentName }}</p>
       <p><strong>Curso:</strong> {{ blocoGerado.data.courseName }}</p>
       <p><strong>Data:</strong> {{ blocoGerado.data.date }}</p>
-  
     </div>
-  
+
   </div>
-  
+
+</div>

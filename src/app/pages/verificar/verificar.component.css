@@ -1,33 +1,120 @@
-.container {
-    max-width: 450px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  .sucesso {
-    margin-top: 15px;
-    padding: 10px;
-    background: #daf5d6;
-    border-left: 4px solid #2e8b57;
-  }
-  
-  .erro {
-    margin-top: 15px;
-    padding: 10px;
-    background: #f8d7da;
-    border-left: 4px solid #b31d28;
-  }
-  
+/* Fundo futurista */
+.verify-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1b0033, #0a0014);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+/* Botão voltar no canto superior direito */
+.btn-back {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.btn-back:hover {
+  background: rgba(255,255,255,0.20);
+  transform: scale(1.05);
+}
+
+/* Card estilo glass */
+.verify-card {
+  width: 420px;
+  padding: 35px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(132, 41, 255, 0.35);
+  color: white;
+}
+
+/* Título */
+.verify-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Inputs futuristas */
+.input-group label {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid #7a11ff;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #ba8bff;
+  box-shadow: 0 0 10px rgba(138, 49, 255, 0.8);
+}
+
+/* Botão verificar */
+.btn-verify {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  background: linear-gradient(90deg, #a234ff, #7a11ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-verify:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(122, 17, 255, 0.8);
+}
+
+/* Mensagem de sucesso */
+.msg-success {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(0, 255, 120, 0.15);
+  border: 1px solid #12ff65;
+  text-align: center;
+  font-weight: 600;
+  color: #36ff92;
+}
+
+/* Mensagem de erro */
+.msg-error {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 0, 72, 0.15);
+  border: 1px solid #ff1e63;
+  text-align: center;
+  font-weight: 600;
+  color: #ff6b93;
+}

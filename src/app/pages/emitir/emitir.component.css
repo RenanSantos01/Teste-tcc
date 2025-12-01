@@ -1,74 +1,167 @@
-/* Container principal */
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Título */
-  h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #1a73e8;
-    font-weight: 600;
-  }
-  
-  /* Labels */
-  label {
-    display: block;
-    margin: 12px 0 6px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Inputs */
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    margin-bottom: 10px;
-    transition: 0.2s;
-  }
-  
-  input:focus {
-    border-color: #1a73e8;
-    outline: none;
-    box-shadow: 0 0 4px rgba(26, 115, 232, 0.4);
-  }
-  
-  /* Botão */
-  button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    background-color: #1a73e8;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  
-  button:hover {
-    background-color: #155fc2;
-  }
-  
-  /* Mensagem de sucesso */
-  .success {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #d4f7d4;
-    color: #2d7a2d;
-    border-left: 5px solid #36c236;
-    border-radius: 6px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
+/* Fundo principal — igual ao da tela de login */
+.emitir-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at top, #1b0033 0%, #0a0014 70%);
+  font-family: "Poppins", sans-serif;
+  color: white;
+
+  position: relative;
+}
+
+/* Botão voltar */
+.btn-back {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  padding: 10px 18px;
+
+  background: linear-gradient(90deg, #a234ff, #7a11ff);
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+
+  box-shadow: 0 0 12px rgba(122, 17, 255, 0.6);
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(122, 17, 255, 0.9);
+}
+
+/* Card futurista — idêntico ao login */
+.certificate-card {
+  width: 420px;
+  padding: 40px 35px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(27, 0, 51, 0.28),
+    rgba(10, 0, 20, 0.45)
+  );
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 0 25px rgba(123, 31, 255, 0.35);
+  color: white;
+}
+
+/* Título */
+.certificate-card h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Grupo de inputs */
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  opacity: 0.85;
+}
+
+/* Inputs futuristas */
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+
+  border: 1px solid #7a11ff;
+  background: rgba(255, 255, 255, 0.06);
+
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #c08bff;
+  box-shadow: 0 0 8px #7a11ff;
+}
+
+/* Botão emitir */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+
+  background: linear-gradient(90deg, #a234ff, #7a11ff);
+  box-shadow: 0 0 15px rgba(122, 17, 255, 0.7);
+
+  transition: 0.3s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: scale(1.03);
+  box-shadow: 0 0 22px rgba(122, 17, 255, 0.9);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Caixa de sucesso */
+.success {
+  margin-top: 25px;
+  padding: 15px;
+
+  background: rgba(60, 255, 120, 0.12);
+  border-left: 4px solid #00ff88;
+
+  color: #00ff88;
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center;
+
+  backdrop-filter: blur(6px);
+}
+
+/* Caixa de informações blockchain */
+.block-info {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow: 0 0 12px rgba(122, 17, 255, 0.3);
+}
+
+.block-info h3, 
+.block-info h4 {
+  color: #c78aff;
+  margin-bottom: 10px;
+}
+
+.block-info p strong {
+  color: #dca9ff;
+}

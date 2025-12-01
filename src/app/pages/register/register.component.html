@@ -1,29 +1,61 @@
-<div class="register-container">
-  <h2>Criar Conta</h2>
+<div class="auth-container">
+  <div class="auth-card">
 
-  <form (ngSubmit)="register()">
+    <!-- TÍTULO -->
+    <h2 class="auth-title">Criar Conta</h2>
 
-    <label>Nome completo</label>
-    <input type="text" [(ngModel)]="name" name="name" required>
+    <!-- FORMULÁRIO -->
+    <form (ngSubmit)="register()">
 
-    <label>Email</label>
-    <input type="email" [(ngModel)]="email" name="email" required>
+      <label class="auth-label">Nome completo</label>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        required
+        class="auth-input"
+      >
 
-    <label>Senha</label>
-    <input type="password" [(ngModel)]="password" name="password" required>
+      <label class="auth-label">Email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+        class="auth-input"
+      >
 
-    <label>Confirmar senha</label>
-    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+      <label class="auth-label">Senha</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        class="auth-input"
+      >
 
-    <button type="submit" class="btn-primary">Cadastrar</button>
-  </form>
+      <label class="auth-label">Confirmar senha</label>
+      <input
+        type="password"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        required
+        class="auth-input"
+      >
 
-  <!-- MENSAGENS -->
-  <p *ngIf="error" class="error">{{ error }}</p>
-  <p *ngIf="success" class="success">Conta criada com sucesso! ✔</p>
+      <button type="submit" class="btn-primary auth-btn">
+        Cadastrar
+      </button>
+    </form>
 
-  <!-- BOTÃO PARA LOGIN -->
-  <button class="btn-secondary" (click)="goToLogin()">
-    Já tem conta? Fazer login
-  </button>
+    <!-- MENSAGENS -->
+    <p *ngIf="error" class="auth-error">{{ error }}</p>
+    <p *ngIf="success" class="auth-success">Conta criada com sucesso! ✔</p>
+
+    <!-- BOTÃO PARA LOGIN -->
+    <button class="btn-secondary auth-btn" (click)="goToLogin()">
+      Já tem conta? Fazer login
+    </button>
+
+  </div>
 </div>
