@@ -17,6 +17,7 @@ export class RegisterComponent {
   email = '';
   password = '';
   confirmPassword = '';
+  aceitaLGPD = false;
 
   error = '';
   success = false;
@@ -26,14 +27,10 @@ export class RegisterComponent {
     private router: Router
   ) {}
 
-  // ----------------------------------------
-  // CADASTRO
-  // ----------------------------------------
   register() {
     this.error = '';
     this.success = false;
 
-    // Validações
     if (!this.name || !this.email || !this.password || !this.confirmPassword) {
       this.error = 'Preencha todos os campos.';
       return;
@@ -49,13 +46,16 @@ export class RegisterComponent {
       return;
     }
 
-    // Envia para API
+    if (!this.aceitaLGPD) {
+      this.error = 'Você deve aceitar os termos de privacidade (LGPD).';
+      return;
+    }
+
     this.authService.register(this.name, this.email, this.password)
       .subscribe({
         next: () => {
           this.success = true;
 
-          // Redirecionar automaticamente após cadastro
           setTimeout(() => {
             this.router.navigate(['/login']);
           }, 1200);
@@ -68,10 +68,11 @@ export class RegisterComponent {
       });
   }
 
-  // ----------------------------------------
-  // IR PARA LOGIN
-  // ----------------------------------------
   goToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  goToSobre() {
+    this.router.navigate(['/sobre']);
   }
 }

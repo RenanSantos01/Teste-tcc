@@ -1,0 +1,58 @@
+<div class="sobre-container">
+
+  <!-- NAVBAR -->
+  <nav class="sobre-header">
+    <h2 class="sobre-logo">Auth<span>Delux</span></h2>
+    <div class="sobre-menu">
+      <button routerLink="/login" class="sobre-link">Login</button>
+      <button routerLink="/register" class="sobre-link">Cadastre-se</button>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO CENTRAL -->
+  <main class="sobre-content">
+
+    <h1 class="sobre-title">Sobre a plataforma</h1>
+
+    <p class="sobre-text">
+      O AuthDelux é uma plataforma de emissão e verificação de certificados utilizando hash criptográfico e registro em blockchain simulada.  
+      Seu objetivo é oferecer maior segurança e autenticidade para instituições de ensino.
+    </p>
+
+    <!-- CARROSSEL IGUAL HOME -->
+    <div class="carousel-container">
+      <div class="carousel-track" [style.transform]="carouselTransform">
+
+        <div class="carousel-item">
+          <img src="assets/img/i1.jpg" />
+          <h3>Segurança digital</h3>
+          <p>Validação criptografada</p>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/i3.jpg" />
+          <h3>Autenticidade</h3>
+          <p>Assinatura hash única</p>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/i2.jpg" />
+          <h3>Eficiência</h3>
+          <p>Consulta instantânea</p>
+        </div>
+
+      </div>
+
+      <button class="btn prev" (click)="prev()">&#10094;</button>
+      <button class="btn next" (click)="next()">&#10095;</button>
+    </div>
+
+  </main>
+
+  <!-- FOOTER FIXADO NO FINAL -->
+  <footer class="sobre-footer">
+    <p>📩 renancardoso1414&#64;gmail.com</p>
+    <p>© 2025 AuthDelux — Certificados inteligentes</p>
+  </footer>
+
+</div>

@@ -1,0 +1,125 @@
+/* ===== LAYOUT PRINCIPAL ===== */
+.sobre-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 20% 30%, #6a00ff, #0b0026 60%, #050012);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* ===== HEADER ===== */
+.sobre-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 50px;
+}
+
+.sobre-logo {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.sobre-logo span {
+  color: #b366ff;
+}
+
+.sobre-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.sobre-link {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+.sobre-link:hover {
+  background: rgba(255,255,255,0.20);
+  transform: scale(1.05);
+}
+
+/* ===== CONTEÚDO CENTRAL ===== */
+.sobre-content {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.sobre-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sobre-text {
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* ===== CARROSSEL ===== */
+.carousel-container {
+  width: 70%;
+  margin: 0 auto 50px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform .6s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 280px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 15px #00000055;
+}
+
+/* Botões */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(0,0,0,0.30);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 50%;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.55);
+}
+
+.prev { left: 5px; }
+.next { right: 5px; }
+
+/* ===== FOOTER - sempre no final ===== */
+.sobre-footer {
+  text-align: center;
+  opacity: 0.75;
+  font-size: 14px;
+  margin-bottom: 25px;
+}

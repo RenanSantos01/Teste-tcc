@@ -4,11 +4,16 @@ import { EmitirComponent } from './pages/emitir/emitir.component';
 import { VerificarComponent } from './pages/verificar/verificar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GuestGuard } from './guards/guest.guard';
 
 export const routes: Routes = [
-  // Home protegido — só acessível quando logado
+
+  // Página sobre — acesso livre
+  { path: 'sobre', component: SobreComponent },
+
+  // Home protegida
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
 
   // Login / Cadastro bloqueados para quem já está logado
@@ -21,4 +26,5 @@ export const routes: Routes = [
 
   // fallback
   { path: '**', redirectTo: '' }
+
 ];

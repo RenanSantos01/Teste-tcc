@@ -49,4 +49,9 @@ export class LoginComponent {
       }
     });
   }
+
+  // 🔥 Botão voltar para página Sobre
+  goToSobre() {
+    this.router.navigate(['/sobre']);
+  }
 }

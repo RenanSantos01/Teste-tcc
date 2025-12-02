@@ -1,8 +1,8 @@
-<div class="home-container">
+<div class="home-container"> 
 
   <!-- NAVBAR FUTURISTA -->
   <nav class="navbar">
-    <div class="logo">Certify<span>Flow</span></div>
+    <div class="logo">Auth<span>Delux</span></div>
 
     <div class="nav-actions">
       <button class="logout-btn" (click)="logout()">Sair</button>
@@ -13,7 +13,7 @@
   <section class="hero-section">
     
     <div class="glass-badge">
-      🔗 Certificados digitais e autenticação blockchain
+       Certificados digitais e autenticação blockchain
     </div>
 
     <h1 class="hero-title">
@@ -36,19 +36,11 @@
     </div>
   </section>
 
-  <!-- CARROSSEL DE IMAGENS -->
-  <div class="carousel-container">
-    <div class="carousel-track" [style.transform]="carouselTransform">
-      
-      <div class="carousel-item" *ngFor="let item of carouselItems">
-        <img [src]="item.image" alt="slide">
-      </div>
 
-    </div>
-
-    <!-- Botões manual -->
-    <button class="btn prev" (click)="prev()">&#10094;</button>
-    <button class="btn next" (click)="next()">&#10095;</button>
-  </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 AuthDelux — Tecnologia e Transparência</p>
+    <p>📩 renancardoso1414&#64;gmail.com</p>
+  </footer>
 
 </div>

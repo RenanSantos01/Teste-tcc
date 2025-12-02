@@ -24,7 +24,7 @@
               
                 "src/favicon.ico",
                   "src/assets",
-                    "public"
+                    "src/public"
               
             ],
             "styles": [

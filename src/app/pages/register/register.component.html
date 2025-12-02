@@ -1,10 +1,12 @@
 <div class="auth-container">
+
+  <!-- BOTÃO VOLTAR -->
+  <button class="btn-back" (click)="goToSobre()">← Voltar</button>
+
   <div class="auth-card">
 
-    <!-- TÍTULO -->
     <h2 class="auth-title">Criar Conta</h2>
 
-    <!-- FORMULÁRIO -->
     <form (ngSubmit)="register()">
 
       <label class="auth-label">Nome completo</label>
@@ -43,16 +45,23 @@
         class="auth-input"
       >
 
+
+      <!-- 📌 LGPD CHECKBOX (NOVO) -->
+      <label class="lgpd-box">
+        <input type="checkbox" [(ngModel)]="aceitaLGPD" name="aceitaLGPD">
+        Autorizo o uso dos meus dados conforme a
+        <a routerLink="/sobre" class="lgpd-link">Política de Privacidade (LGPD)</a>
+      </label>
+
+
       <button type="submit" class="btn-primary auth-btn">
         Cadastrar
       </button>
     </form>
 
-    <!-- MENSAGENS -->
     <p *ngIf="error" class="auth-error">{{ error }}</p>
     <p *ngIf="success" class="auth-success">Conta criada com sucesso! ✔</p>
 
-    <!-- BOTÃO PARA LOGIN -->
     <button class="btn-secondary auth-btn" (click)="goToLogin()">
       Já tem conta? Fazer login
     </button>
