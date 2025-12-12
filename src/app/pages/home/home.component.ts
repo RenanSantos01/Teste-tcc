@@ -19,6 +19,6 @@ export class HomeComponent {
 
   logout() {
     this.authService.logout(); 
-    this.router.navigate(['/sobre']); // 🔥 Agora vai para SOBRE!
+    this.router.navigate(['/sobre']); 
   }
 }

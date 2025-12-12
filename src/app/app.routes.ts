@@ -10,21 +10,21 @@ import { GuestGuard } from './guards/guest.guard';
 
 export const routes: Routes = [
 
-  // Página sobre — acesso livre
+  
   { path: 'sobre', component: SobreComponent },
 
-  // Home protegida
+  
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
 
-  // Login / Cadastro bloqueados para quem já está logado
+  
   { path: 'login', component: LoginComponent, canActivate: [GuestGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [GuestGuard] },
 
-  // Páginas internas protegidas
+  
   { path: 'emitir', component: EmitirComponent, canActivate: [AuthGuard] },
   { path: 'validar', component: VerificarComponent, canActivate: [AuthGuard] },
 
-  // fallback
+  
   { path: '**', redirectTo: '' }
 
 ];

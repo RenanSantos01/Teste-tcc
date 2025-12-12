@@ -1,36 +1,35 @@
-/* Fundo principal — igual ao da tela de login */
+
 .emitir-container {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 60px;
 
   background: radial-gradient(circle at top, #1b0033 0%, #0a0014 70%);
   font-family: "Poppins", sans-serif;
   color: white;
-
   position: relative;
 }
 
-/* Botão voltar */
+
 .btn-back {
   position: absolute;
   top: 25px;
   left: 25px;
-  padding: 10px 18px;
 
+  padding: 10px 18px;
   background: linear-gradient(90deg, #a234ff, #7a11ff);
   border: none;
   border-radius: 10px;
 
   color: white;
-  font-size: 15px;
-  cursor: pointer;
   font-weight: 600;
-
-  box-shadow: 0 0 12px rgba(122, 17, 255, 0.6);
+  cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 0 12px rgba(122, 17, 255, 0.6);
 }
 
 .btn-back:hover {
@@ -38,23 +37,17 @@
   box-shadow: 0 0 18px rgba(122, 17, 255, 0.9);
 }
 
-/* Card futurista — idêntico ao login */
+
 .certificate-card {
   width: 420px;
   padding: 40px 35px;
-
-  background: linear-gradient(
-    180deg,
-    rgba(27, 0, 51, 0.28),
-    rgba(10, 0, 20, 0.45)
-  );
   border-radius: 18px;
 
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(27, 0, 51, 0.25);
   backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   box-shadow: 0 0 25px rgba(123, 31, 255, 0.35);
-  color: white;
 }
 
 /* Título */
@@ -66,7 +59,7 @@
   letter-spacing: 1px;
 }
 
-/* Grupo de inputs */
+
 .input-group {
   margin-bottom: 22px;
 }
@@ -78,27 +71,42 @@
   opacity: 0.85;
 }
 
-/* Inputs futuristas */
 .input-group input {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
 
+  border-radius: 10px;
   border: 1px solid #7a11ff;
   background: rgba(255, 255, 255, 0.06);
 
-  color: white;
+  color: #ffffff !important;
   font-size: 15px;
+
   outline: none;
   transition: 0.3s;
 }
+
 
 .input-group input:focus {
   border-color: #c08bff;
   box-shadow: 0 0 8px #7a11ff;
 }
 
-/* Botão emitir */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.06) inset !important;
+  border: 1px solid #7a11ff !important;
+
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+
 .btn-primary {
   width: 100%;
   padding: 14px;
@@ -106,14 +114,14 @@
 
   border: none;
   border-radius: 10px;
-  cursor: pointer;
-
-  font-size: 17px;
-  font-weight: 600;
-  color: white;
 
   background: linear-gradient(90deg, #a234ff, #7a11ff);
   box-shadow: 0 0 15px rgba(122, 17, 255, 0.7);
+
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
 
   transition: 0.3s;
 }
@@ -124,11 +132,11 @@
 }
 
 .btn-primary:disabled {
-  opacity: 0.4;
   cursor: not-allowed;
+  opacity: 0.4;
 }
 
-/* Caixa de sucesso */
+
 .success {
   margin-top: 25px;
   padding: 15px;
@@ -144,19 +152,21 @@
   backdrop-filter: blur(6px);
 }
 
-/* Caixa de informações blockchain */
+/* ===========================
+   BLOCO DO REGISTRO
+=========================== */
 .block-info {
   margin-top: 30px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.06);
 
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   box-shadow: 0 0 12px rgba(122, 17, 255, 0.3);
 }
 
-.block-info h3, 
+.block-info h3,
 .block-info h4 {
   color: #c78aff;
   margin-bottom: 10px;

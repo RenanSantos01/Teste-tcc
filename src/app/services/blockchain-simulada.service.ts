@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 export interface CertificateData {
   studentName: string;
   courseName: string;
+  institution: string;   
   date: string;
 }
 
@@ -18,20 +19,24 @@ export interface Block {
   providedIn: 'root'
 })
 export class BlockchainService {
+
   private blockchain: Block[] = [];
 
   constructor() {
     this.createGenesisBlock();
   }
 
-  // 🔹 Primeiro bloco da cadeia
+  
+  //  Criar bloco gênesis
+  
   private createGenesisBlock() {
     const genesis: Block = {
       index: 0,
       timestamp: new Date().toISOString(),
       data: {
         studentName: "Genesis",
-        courseName: "Genesis",
+        courseName: "Genesis Course",
+        institution: "Genesis Institution",
         date: new Date().toISOString()
       },
       previousHash: "0",
@@ -41,14 +46,16 @@ export class BlockchainService {
     this.blockchain.push(genesis);
   }
 
-  // 🔹 Função para gerar hash (simples)
+  
+  //  Gerar hash simples
+  
   private generateHash(input: string): string {
-    return btoa(
-      input + Math.random().toString(36).substring(2)
-    ).substring(0, 32);
+    return btoa(input + Math.random().toString(36).substring(2)).substring(0, 32);
   }
 
-  // 🔹 Adiciona um certificado na blockchain simulada
+ 
+  //  Registrar novo certificado
+ 
   addCertificate(data: CertificateData): Block {
     const previousBlock = this.blockchain[this.blockchain.length - 1];
 
@@ -64,13 +71,17 @@ export class BlockchainService {
     return block;
   }
 
-  // 🔹 Lista todos os certificados gravados
+  
+  //  Listar toda blockchain
+  
   getBlockchain(): Block[] {
     return this.blockchain;
   }
 
-  // 🔹 Valida se o certificado está na cadeia
-  validateCertificate(hash: string): boolean {
-    return this.blockchain.some(b => b.hash === hash);
+  
+  // Verificar validade pelo hash
+  
+  validateCertificate(hash: string): Block | null {
+    return this.blockchain.find(b => b.hash === hash) || null;
   }
 }

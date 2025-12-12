@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BlockchainService } from '../../services/blockchain-simulada.service';
+import { BlockchainService, Block } from '../../services/blockchain-simulada.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,9 @@ export class VerificarComponent {
 
   hash: string = "";
   resultado: string = "";
-  valido: boolean | null = null;
+
+  // Agora recebemos um bloco completo ou null
+  blocoEncontrado: Block | null = null;
 
   constructor(
     private blockchainService: BlockchainService,
@@ -23,14 +25,16 @@ export class VerificarComponent {
   ) {}
 
   verificar() {
-    const exists = this.blockchainService.validateCertificate(this.hash);
 
-    this.valido = exists;
+    // validateCertificate agora retorna Block | null
+    const block = this.blockchainService.validateCertificate(this.hash);
 
-    if (exists) {
-      this.resultado = "✔ Certificado encontrado! Hash válido.";
+    this.blocoEncontrado = block;
+
+    if (block) {
+      this.resultado = "✔ Certificado encontrado!";
     } else {
-      this.resultado = "❌ Certificado NÃO encontrado! Hash inválido.";
+      this.resultado = "❌ Certificado NÃO encontrado!";
     }
   }
 

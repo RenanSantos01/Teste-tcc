@@ -1,4 +1,4 @@
-/* ===== LAYOUT PRINCIPAL ===== */
+
 .sobre-container {
   min-height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   color: white;
 }
 
-/* ===== HEADER ===== */
+
 .sobre-header {
   display: flex;
   justify-content: space-between;
@@ -46,7 +46,7 @@
   transform: scale(1.05);
 }
 
-/* ===== CONTEÚDO CENTRAL ===== */
+
 .sobre-content {
   text-align: center;
   width: 100%;
@@ -67,7 +67,7 @@
   line-height: 1.6;
 }
 
-/* ===== CARROSSEL ===== */
+
 .carousel-container {
   width: 70%;
   margin: 0 auto 50px auto;
@@ -94,7 +94,7 @@
   box-shadow: 0 0 15px #00000055;
 }
 
-/* Botões */
+
 .btn {
   position: absolute;
   top: 50%;
@@ -116,7 +116,7 @@
 .prev { left: 5px; }
 .next { right: 5px; }
 
-/* ===== FOOTER - sempre no final ===== */
+
 .sobre-footer {
   text-align: center;
   opacity: 0.75;

@@ -13,7 +13,7 @@ const SECRET = "minha_chave_super_secreta";
 
 // 📌 Conexão MySQL
 const db = mysql.createConnection({
-  host: "localhost", // depois trocamos para nuvem
+  host: "localhost", 
   user: "root",
   password: "1234",
   database: "certificados",
@@ -25,11 +25,11 @@ db.connect(err => {
   console.log("MySQL conectado!");
 });
 
-/* -----------------------------------------------
-   ROTAS DE AUTENTICAÇÃO
-------------------------------------------------*/
 
-// 🔹 Cadastro
+   // ROTAS DE AUTENTICAÇÃO
+
+
+//  Cadastro
 app.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -51,7 +51,7 @@ app.post("/register", async (req, res) => {
   });
 });
 
-// 🔹 Login
+//  Login
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
 
@@ -77,9 +77,9 @@ app.post("/login", (req, res) => {
   });
 });
 
-/* -----------------------------------------------
-   MIDDLEWARE PARA PROTEGER ROTAS
-------------------------------------------------*/
+
+  
+
 function verifyToken(req, res, next) {
   const token = req.headers["authorization"];
   if (!token) return res.status(401).json({ error: "Token ausente" });
@@ -92,16 +92,13 @@ function verifyToken(req, res, next) {
   });
 }
 
-/* -----------------------------------------------
-   ROTA PROTEGIDA (exemplo)
-------------------------------------------------*/
+
+
 app.get("/user-info", verifyToken, (req, res) => {
   res.json({ message: "Acesso autorizado!", user: req.user });
 });
 
-/* -----------------------------------------------
-   INICIAR SERVIDOR
-------------------------------------------------*/
+
 app.listen(3001, () => {
   console.log("API rodando na porta 3001!");
 });

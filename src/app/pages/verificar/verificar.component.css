@@ -1,4 +1,4 @@
-/* Fundo futurista */
+
 .verify-container {
   height: 100vh;
   display: flex;
@@ -9,7 +9,7 @@
   position: relative;
 }
 
-/* Botão voltar no canto superior direito */
+
 .btn-back {
   position: absolute;
   top: 25px;
@@ -30,7 +30,7 @@
   transform: scale(1.05);
 }
 
-/* Card estilo glass */
+
 .verify-card {
   width: 420px;
   padding: 35px;
@@ -42,7 +42,6 @@
   color: white;
 }
 
-/* Título */
 .verify-title {
   text-align: center;
   margin-bottom: 25px;
@@ -50,7 +49,7 @@
   font-weight: 600;
 }
 
-/* Inputs futuristas */
+
 .input-group label {
   display: block;
   font-size: 14px;
@@ -75,7 +74,7 @@
   box-shadow: 0 0 10px rgba(138, 49, 255, 0.8);
 }
 
-/* Botão verificar */
+
 .btn-verify {
   width: 100%;
   margin-top: 18px;
@@ -95,7 +94,7 @@
   box-shadow: 0 0 20px rgba(122, 17, 255, 0.8);
 }
 
-/* Mensagem de sucesso */
+
 .msg-success {
   margin-top: 20px;
   padding: 12px;
@@ -107,7 +106,7 @@
   color: #36ff92;
 }
 
-/* Mensagem de erro */
+
 .msg-error {
   margin-top: 20px;
   padding: 12px;

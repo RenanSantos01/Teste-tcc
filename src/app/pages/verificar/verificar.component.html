@@ -1,12 +1,13 @@
 <div class="verify-container">
 
-  <!-- BOTÃO VOLTAR -->
+  
   <button class="btn-back" (click)="voltarHome()">← Voltar</button>
 
   <div class="verify-card">
 
     <h2 class="verify-title">Verificar Certificado</h2>
 
+    
     <div class="input-group">
       <label>Insira o hash do certificado:</label>
       <input type="text" [(ngModel)]="hash" placeholder="Cole aqui o hash">
@@ -14,8 +15,27 @@
 
     <button class="btn-verify" (click)="verificar()">Verificar</button>
 
-    <div *ngIf="valido !== null" [ngClass]="valido ? 'msg-success' : 'msg-error'">
+    
+    <div *ngIf="resultado && !blocoEncontrado" class="msg-error">
       {{ resultado }}
+    </div>
+
+   
+    <div *ngIf="blocoEncontrado" class="msg-success">
+
+      <h3>Certificado encontrado!</h3>
+
+      <p><strong>Aluno:</strong> {{ blocoEncontrado.data.studentName }}</p>
+      <p><strong>Curso:</strong> {{ blocoEncontrado.data.courseName }}</p>
+      <p><strong>Instituição:</strong> {{ blocoEncontrado.data.institution }}</p>
+      <p><strong>Data:</strong> {{ blocoEncontrado.data.date }}</p>
+
+      <hr>
+
+      <p><strong>Hash:</strong> {{ blocoEncontrado.hash }}</p>
+      <p><strong>Anterior:</strong> {{ blocoEncontrado.previousHash }}</p>
+      <p><strong>Timestamp:</strong> {{ blocoEncontrado.timestamp }}</p>
+
     </div>
 
   </div>
